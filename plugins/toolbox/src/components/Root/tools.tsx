@@ -42,6 +42,7 @@ const CSSBeautify = lazy(() => import('../Formatters/CSSBeautify'));
 const SQLBeautify = lazy(() => import('../Formatters/SQLBeautify'));
 
 const IbanValidator = lazy(() => import('../Validators/IbanValidator'));
+const RegexValidator = lazy(() => import('../Validators/RegexValidator'));
 const UrlExploder = lazy(() => import('../Misc/UrlExploder'));
 const Whois = lazy(() => import('../Networking/Whois'));
 const StringAnalyzer = lazy(() => import('../Misc/StringAnalyzer'));
@@ -304,6 +305,14 @@ export const defaultTools: Tool[] = [
     component: <IbanValidator />,
     category: 'Validate',
     description: 'Validates IBAN based on ISO 13616',
+  },
+  {
+    id: 'regex',
+    name: 'Regex validator',
+    component: <RegexValidator />,
+    category: 'Validate',
+    description:
+      'Validates regex patterns against a test-text and shows possible matches',
   },
   {
     id: 'url-exploder',
